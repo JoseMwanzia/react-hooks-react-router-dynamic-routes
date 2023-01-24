@@ -10,12 +10,12 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
+      <Route>
       <Route path="/movies" element={<MoviesPage data={data} setState={setState} />}>
         </Route>
         <Route path="/" element={<div>Home</div>}>
         </Route>
-      </Routes>
+      </Route>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import MoviesList from "./MoviesList";
 import MovieShow from "./MovieShow";
 
 function MoviesPage({ movies }) {
-  const match = useMatch() || { url: "/movies" };
+  const match = useMatch() || {url: '/movies'};
   // console.log(match);
 
   return (
@@ -12,16 +12,12 @@ function MoviesPage({ movies }) {
       <MoviesList movies={movies} />
 
       {/* Adding code to show a message to the user to select a movie if they haven't yet */}
-      <Routes>
-        <Route
-          path={match.url}
-          element={<h3>Choose a movie from the list above</h3>}
-        ></Route>
-        <Route
-          path={`${match.url}/:movieId`}
-          element={<MovieShow movies={movies} />}
-        ></Route>
-      </Routes>
+      <Route>
+      <Route path={match.url} element={<h3>Choose a movie from the list above</h3>}>
+      </Route>
+      <Route path={`${match.url}/:movieId`} element={<MovieShow movies={movies} />}>
+      </Route>
+      </Route>
     </div>
   );
 }
